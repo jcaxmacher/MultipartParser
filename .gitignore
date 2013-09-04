@@ -153,3 +153,6 @@ $RECYCLE.BIN/
 # nuget packages
 packages/
 *.nupkg
+
+# NUnit test results
+TestResult.xml
