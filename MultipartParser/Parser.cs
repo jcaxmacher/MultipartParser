@@ -66,7 +66,8 @@ namespace MultipartParser
             from mediaType in MediaType
             from attrs in MediaAttributes.End()
             select new Data.ContentType(mediaType: mediaType.Item1, mediaSubType: mediaType.Item2, attrs: attrs);
-                static Parser<string> MessagePartStart(string boundary)
+        
+        static Parser<string> MessagePartStart(string boundary)
         {
             boundary = doubleDash + boundary;
             return Parse.String(boundary).Text();
@@ -126,9 +127,9 @@ namespace MultipartParser
             return Parser.Messages(contentType["boundary"]).Parse(responseBody);
         }
 
-        public static List<Data.Message> ParseMessages(string contentTypeRawText, Stream responseBody)
+        public static List<Data.Message> ParseMessages(string contentTypeRawText, Stream responseBody, Encoding encoding)
         {
-            var reader = new StreamReader(responseBody, System.Text.Encoding.GetEncoding("utf-8"));
+            var reader = new StreamReader(responseBody, encoding);
             return ParseMessages(contentTypeRawText, reader.ReadToEnd());
         }
     }

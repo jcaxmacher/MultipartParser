@@ -30,9 +30,10 @@ following two dependencies are available at build time:
                 List<Message> messages = Parser.ParseMessages(contentTypeData, testData);
 
                 Stream httpResponseStream = ...
+                Encoding encoding = System.Text.Encoding.GetEncoding("utf-8");
 
                 // Or parse from a stream
-                List<Message> messages = Parser.ParseMessags(contentTypeData, httpResponseStream);
+                List<Message> messages = Parser.ParseMessags(contentTypeData, httpResponseStream, encoding);
             }
         }
     }
