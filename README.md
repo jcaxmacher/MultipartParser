@@ -11,7 +11,7 @@ following two dependencies are available at build time:
 *  Sprache
 *  NUnit
 
-# Usage
+## Usage
 
     using MultipartParser;
     using MultipartParser.Data;
