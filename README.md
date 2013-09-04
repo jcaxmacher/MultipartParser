@@ -24,8 +24,7 @@ following two dependencies are available at build time:
             {
                 // Http response content type
                 string contentTypeData = "multipart/related; boundary=XXX; type=text/xml";
-                string testData = @"... long test data with actual http
-response";
+                string testData = @"... long test data with actual http response";
     
                 // Parse from a string
                 List<Message> messages = Parser.ParseMessages(contentTypeData, testData);
